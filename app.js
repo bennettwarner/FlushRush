@@ -140,8 +140,6 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
  * API examples routes.
  */
-app.get('/api', apiController.getApi);
-app.get('/api/google-maps', apiController.getGoogleMaps);
 app.get('/api/find/:lat/:long', apiController.find);
 
 /**
