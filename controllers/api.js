@@ -1,15 +1,22 @@
-const { promisify } = require('util');
-const request = require('request');
-
-const bathroom = require('../models/Bathroom');
+const Bathroom = require('../models/Bathroom');
 
 
-exports.find = (req, res) => {
-  //console.log('test');
-  //res.send('lat: ' + req.params.lat + ' long: ' + req.params.long);
+exports.find = (req, res, next) => {
+  Bathroom.find({}, (err, locations) => {
+    console.log(locations);
+    res.render('find', {
+      google_map_api_key: process.env.GOOGLE_MAP_API_KEY,
+      title: 'Find',
+      locations: locations
+    });
 
-  //pull everything within +-.30 degrees from lat and long 
-  const arr = bathroom.find({});
-  var bath = arr[0];
-  res.send('bathroom: ' + bath);
+  });
+
+};
+
+exports.getGoogleMaps = (req, res) => {
+  res.render('api/google-maps', {
+    title: 'Google Maps API',
+    google_map_api_key: process.env.GOOGLE_MAP_API_KEY
+  });
 };
