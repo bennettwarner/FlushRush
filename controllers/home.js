@@ -68,6 +68,7 @@ console.log(bathroom)
 
   exports.getLocation = (req, res, next) => {
     Bathroom.findOne({ id: req.params.id }, (err, existingRecord) => {
+      if (existingRecord){
       console.log(existingRecord);
       var name = existingRecord.name;
       var location = existingRecord.location;
@@ -96,7 +97,7 @@ console.log(bathroom)
         added: added,
       });
   
-    });
+     } });
   };
   
   exports.getLocations = (req, res, next) => {
