@@ -7,6 +7,7 @@
     --broomblue: #243165;
     }
     
+    /*General Styles*/
     body {
         background-color: var(--broomblue);
         color: var(--pale);
@@ -16,6 +17,7 @@
         border-top: 1px solid var(--lilgray);
     }
 
+    /*Home Styles*/
     #logo {
         float: left;
         width: 7.5em;
@@ -48,6 +50,7 @@
         color: #7a70ff;
     }
 
+    /*Location Styles*/
     .table, .table-hover, .table:hover {
         color: var(--pale) !important;
         border: var(--lilgray);
@@ -69,6 +72,18 @@
     .jq-ry-rated-group > svg {
         fill: var(--yella);
     }
-
+    /*Add Styles*/
+    .form-check-check {
+        width: 100px;
+    }
+    /*ReSpOnSiVe DeSiGn*/
+    @media (max-width: 576px) {
+        #paperTowels {
+            margin-left: 10px !important;
+        }
+        #please {
+            margin-left: 30px !important;
+        }
+    }
 
     
