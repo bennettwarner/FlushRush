@@ -1,17 +1,19 @@
 :root{
     --yella: #f8f186;
+    --alittlelessyella: #f8f4b9;
     --pale: #feffff;
     --grayish: #6e7273;
     --lilgray: #b6b9be;
+    --broomblue: #243165;
     }
     
     body {
-        background-color: #243165;
-        color: #feffff;
+        background-color: var(--broomblue);
+        color: var(--pale);
     }
 
     hr {
-        border-top: 1px solid #b6b9be;
+        border-top: 1px solid var(--lilgray);
     }
 
     #logo {
@@ -32,18 +34,40 @@
         }
 
     .btn, .btn-raised {
-        background-image:linear-gradient(to bottom, #f8f4b9 60%, #f8f186 100%);
-        background-color: #f8f186 !important;
+        background-image:linear-gradient(to bottom, var(--alittlelessyella) 60%, var(--yella) 100%);
+        background-color: var(--yella) !important;
         border-radius: 5px;
     }
     .btn-primary {
-        color: #6e7273;
+        color: var(--grayish);
     }
     
     .btn-link {
         background-image:none;
-        background-color:#243165 !important;
+        background-color: var(--broomblue) !important;
         color: #7a70ff;
+    }
+
+    .table, .table-hover, .table:hover {
+        color: var(--pale) !important;
+        border: var(--lilgray);
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 0px solid var(--lilgray);
+    }
+
+    tr {
+        border-top: 1px solid var(--lilgray);
+    }
+
+    .jq-ry-normal-group > svg {
+        fill: var(--lilgray) !important;
+    }
+
+    .jq-ry-rated-group > svg {
+        fill: var(--yella);
     }
 
 
