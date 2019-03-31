@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    h1=title
+    br
+    table.table.table-hover
+        thead
+            tr
+                th(scope='col') Name
+                th(scope='col') Location
+                th(scope='col') Distance
+                th(scope='col') Score
+        tbody
+            each location, i in locations
+                tr
+                    td
+                        h6
+                            a(href="/location/"+location.id)=location.name
+                    td
+                        h6=location.location
+                    td(id= location.name) 
+                    td 
+                        h5
+                            if location.quality=='0' || location.quality=='1'
+                                i.fas.fa-times-circle.fa-sm(style='color: red;')
+                            if location.quality=='2' || location.quality=='3'
+                                i.fas.fa-minus-circle.fa-sm(style='color: yellow;')
+                            if location.quality=='4' || location.quality=='5'
+                                i.fas.fa-check-circle.fa-sm(style='color: green;')
+
+
+
+            
+
+    script.
+        var latitude
+        var longitude

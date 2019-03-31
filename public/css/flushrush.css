@@ -20,10 +20,24 @@
         height: 7.5em;
     }
 
+    .front-row {
+        display: inline-block;
+        vertical-align: top;
+    }
+        .col-md-6 {
+            margin-bottom: 2em;
+        }
+        .form-group {
+            vertical-align: center;
+        }
+
     .btn, .btn-raised {
         background-image:linear-gradient(to bottom, #f8f4b9 60%, #f8f186 100%);
         background-color: #f8f186 !important;
         border-radius: 5px;
+    }
+    .btn-primary {
+        color: #6e7273;
     }
 
 
