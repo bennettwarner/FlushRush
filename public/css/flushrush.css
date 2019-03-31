@@ -1,17 +1,14 @@
 :root{
---yella: #f8f186;
---pale: #feffff;
---grayish: #6e7273;
---lilgray: #b6b9be;
-}
-
-*{
-    font-family: Helvetica, Sans-Serif !important;
-}
-
-.btn, .btn-raised {
-    background-image:linear-gradient(to bottom, #f8f4b9 60%, #f8f186 100%);
-    background-color: #f8f186 !important;
-    color: #6e7273;
-    border-radius: 5px;
-}
+    --yella: #f8f186;
+    --pale: #feffff;
+    --grayish: #6e7273;
+    --lilgray: #b6b9be;
+    }
+    
+    .btn, .btn-raised {
+        background-image:linear-gradient(to bottom, #f8f4b9 60%, #f8f186 100%);
+        background-color: #f8f186 !important;
+        color: #6e7273;
+        border-radius: 5px;
+    }
+    
