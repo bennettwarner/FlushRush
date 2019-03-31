@@ -7,3 +7,13 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+/**
+ * GET /
+ * Add.
+ */
+exports.add = (req, res) => {
+  res.render('add', {
+    title: 'Add a Flush'
+  });
+};
