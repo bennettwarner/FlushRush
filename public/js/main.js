@@ -1,5 +1,19 @@
 /* eslint-env jquery, browser */
 $(document).ready(() => {
+  $(function () {
+    $("#cleanlinessView").rateYo({
+      rating: cleanliness,
+      readOnly: true
+    });
+    $("#trafficView").rateYo({
+      rating: traffic,
+      readOnly: true
+    });
+    $("#tpQualityView").rateYo({
+      rating: tpQuality,
+      readOnly: true
+    });
+  });
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setPosition);
@@ -36,5 +50,6 @@ $(document).ready(() => {
     request.send()
   }
   getLocation();
+ 
 
 });

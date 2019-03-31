@@ -67,20 +67,33 @@ console.log(bathroom)
   exports.getLocation = (req, res, next) => {
     Bathroom.findOne({ id: req.params.id }, (err, existingRecord) => {
       console.log(existingRecord);
-    });
-    res.render('location', {
-      title: existingRecord.name,
-      name: existingRecord.name,
-      location: existingRecord.location,
-      latitude: existingRecord.lat,
-      longitude: existingRecord.lon,
-      gender: existingRecord.gender,
-      cleanliness: existingRecord.cleanliness,
-      traffic: existingRecord.traffic,
-      tpQuality: existingRecord.tpQuality,
-      paperTowels: existingRecord.paperTowels,
-      toiletPaper: existingRecord.toiletPaper,
-      added: existingRecord.createdAt,
+      var name = existingRecord.name;
+      var location = existingRecord.location;
+      var lat = existingRecord.latitude;
+      var lon = existingRecord.longitude;
+      var gender = existingRecord.gender;
+      var cleanliness = existingRecord.cleanliness;
+      var traffic = existingRecord.traffic;
+      var tpQuality = existingRecord.tpQuality;
+      var paperTowels = existingRecord.paperTowels;
+      var toiletPaper = existingRecord.toiletPaper;
+      var added = existingRecord.createdAt;
+      var map = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAumXpydW7Mo9r5QMTUqdWkPXcLNysTZyg\
+      &q='+ lat + ',' + lon;
+      res.render('location', {
+        title: name,
+        name: name,
+        location: location,
+        map: map,
+        gender: gender,
+        cleanliness: cleanliness,
+        traffic: traffic,
+        tpQuality: tpQuality,
+        paperTowels: paperTowels,
+        toiletPaper: toiletPaper,
+        added: added,
+      });
+  
     });
   };
   

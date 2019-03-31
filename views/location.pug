@@ -1,27 +1,50 @@
 extends layout
 
 block content
-  h1 FlushRush
-  p.lead A boilerplate for Node.js web applications.
+  h1=name
+  p.lead=location
   hr
   .row
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
-    .col-md-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-raised(href='#', role='button') View details »
+    .col-md-5
+      h4 Added:
+      p=added
+      h4 Gender:
+      h1 
+        if gender == 'male'
+          i.fas.fa-male.fa-sm
+        if gender == 'female'
+          i.fas.fa-female.fa-sm
+      h5
+        if gender == 'unisex'
+          | Unisex
+
+      h4 Cleanliness:
+      #cleanlinessView
+      h4 Traffic:
+      #trafficView
+      h4 Toilet Paper Quality:
+      #tpQualityView
+      h4 Had Paper Towels?
+      h1
+        if paperTowels == 'true'
+          i.fas.fa-thumbs-up.fa-sm(style='color: green;')
+        else
+          i.fas.fa-thumbs-down.fa-sm(style='color: red;')
+      h4 Had Toilet Paper?
+      h1
+        if toiletPaper == 'true'
+          i.fas.fa-thumbs-up.fa-sm(style='color: green;')
+        else
+          i.fas.fa-thumbs-down.fa-sm(style='color: red;')
+      
+    .col-md-4
+      iframe(width='600', height='450', frameborder='0', style='border:0', src=map, allowfullscreen='')
+  hr
+  h3 Comments
+  p.lead=location
+  script.
+    var cleanliness = #{cleanliness}
+    var traffic = #{traffic}
+    var tpQuality = #{tpQuality}
+
+
