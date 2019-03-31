@@ -11,6 +11,8 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+exports.snap = (req, res) => {
+res.redirect('https://accounts.snapchat.com/accounts/login?client_id=geo');};
 
 exports.postComment = (req, res, next) => {
   const comment = new Comment({
