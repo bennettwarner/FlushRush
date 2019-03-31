@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const bathroomSchema = new mongoose.Schema({
+  id: Number,
   name: String,
   location: String,
   latitude: String,
@@ -11,7 +12,7 @@ const bathroomSchema = new mongoose.Schema({
   tpQuality: Number,
   paperTowels: String,
   toiletPaper: String,
-  
+
 }, { timestamps: true });
 
 const Bathroom = mongoose.model('Bathroom', bathroomSchema);

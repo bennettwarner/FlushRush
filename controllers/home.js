@@ -37,6 +37,7 @@ exports.postAdd = (req, res, next) => {
     toiletpaper = true;
   }
   const bathroom = new Bathroom({
+    id: (new Date).getTime(),
     name: req.body.name,
     location: req.body.location,
     latitude: req.body.lat,
