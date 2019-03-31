@@ -39,6 +39,12 @@
     .btn-primary {
         color: #6e7273;
     }
+    
+    .btn-link {
+        background-image:none;
+        background-color:#243165 !important;
+        color: #7a70ff;
+    }
 
 
     
