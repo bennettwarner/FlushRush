@@ -1,5 +1,6 @@
 const Bathroom = require('../models/Bathroom');
 
+const Comment = require('../models/Comment');
 
 /**
  * GET /
@@ -10,6 +11,19 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+exports.postComment = (req, res, next) => {
+  const comment = new Comment({
+    id: req.body.id,
+    comment: req.body.comment,
+  });
+console.log(comment)
+    comment.save((err) => {
+      if (err) { return next(err); }
+        res.redirect('/location/'+req.body.id);
+        req.flash('success', { msg: 'Comment Added' });
+      });
+  }
 
 /**
  * GET /
@@ -69,6 +83,7 @@ console.log(bathroom)
   exports.getLocation = (req, res, next) => {
     Bathroom.findOne({ id: req.params.id }, (err, existingRecord) => {
       if (existingRecord){
+      Comment.find({ id: req.params.id }, (err, comments) => {
       console.log(existingRecord);
       var name = existingRecord.name;
       var location = existingRecord.location;
@@ -95,10 +110,11 @@ console.log(bathroom)
         paperTowels: paperTowels,
         toiletPaper: toiletPaper,
         added: added,
+        comments: comments,
       });
   
-     } });
-  };
+     } );
+  }})};
   
   exports.getLocations = (req, res, next) => {
     Bathroom.find({}, (err, locations) => {

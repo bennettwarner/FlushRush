@@ -52,7 +52,7 @@ $(document).ready(() => {
     request.send()
   }
   getLocation();
- 
+  $("#commentId").val(window.location.pathname.split('/')[2]);
   $("#simpleTable").stupidtable();
 
 });

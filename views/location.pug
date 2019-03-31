@@ -41,7 +41,28 @@ block content
       iframe(width='600', height='450', frameborder='0', style='border:0', src=map, allowfullscreen='')
   hr
   h3 Comments
-  p.lead=location
+  ul
+    each comment, i in comments
+      li
+        h4=comment.comment
+        p
+          i=comment.createdAt
+
+  form(action='/comment', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='comment') Comment
+      .col-md-7
+        input.form-control(type='text', name='comment', id='comment')
+        input(type='hidden', id='commentId', name='id', value='0')
+
+    br
+
+    .form-group
+      .offset-sm-3.col-md-7.pl-2
+        button.btn.btn.btn-primary(type='submit')
+          | Add Comment
+
   script.
     var cleanliness = #{cleanliness}
     var traffic = #{traffic}
