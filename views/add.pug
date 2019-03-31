@@ -14,6 +14,9 @@ block content
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='name') Location
       .col-md-7
         input.form-control(type='text', name='location', id='location')
+        input(type='hidden', name='lat', value='0')
+        input(type='hidden', name='lon', value='0')
+
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right Gender
       .col-sm-6
@@ -39,10 +42,26 @@ block content
         #trafficStars
         input#traffic(type='hidden', name='traffic', value='0')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='traffic') Toilet Paper
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='tp') Toilet Paper
       .col-md-7
         #tpStars
         input#tp(type='hidden', name='tp', value='0')
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='traffic') Features
+    .form-group.row
+      .col-md-3
+      .col-md-7
+        input#paperTowels.form-check-input(type='checkbox', name='papertowels', value='')
+        label.form-check-label(for='paperTowels')
+          | Paper Towels
+    .form-group.row
+      .col-md-3
+      .col-md-7
+        input#toiletPaper.form-check-input(type='checkbox', name='toiletpaper', value='')
+        label.form-check-label(for='toiletPaper')
+          | Toilet Paper
+    br
+
     .form-group
       .offset-sm-3.col-md-7.pl-2
         button.btn.btn.btn-primary(type='submit')
