@@ -29,20 +29,22 @@ block content
           input(type='radio', class='form-check-input' checked=user.profile.gender == 'other', name='gender', value='unisex', data-toggle='radio')
           label.form-check-label Unisex
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') Location
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='cleanliness') Cleanliness
       .col-md-7
-        input.form-control(type='text', name='location', id='location', value=user.profile.location, autocomplete)
+        #cleanlinessStars
+        input#cleanliness(type='hidden', name='cleanliness', value='0')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='website') Website
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='traffic') Traffic
       .col-md-7
-        input.form-control(type='text', name='website', id='website', value=user.profile.website, autocomplete='url')
+        #trafficStars
+        input#traffic(type='hidden', name='traffic', value='0')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right Gravatar
-      .col-sm-4
-        img(src=user.gravatar(), class='profile', width='100', height='100')
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='traffic') Toilet Paper
+      .col-md-7
+        #tpStars
+        input#tp(type='hidden', name='tp', value='0')
     .form-group
       .offset-sm-3.col-md-7.pl-2
         button.btn.btn.btn-primary(type='submit')
           i.fas.fa-toilet.fa-sm
           | Add Flush
-

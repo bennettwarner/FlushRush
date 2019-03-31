@@ -8,7 +8,9 @@ html
     meta(name='csrf-token', content=_csrf)
     title #{title} - FlushRush
     link(rel='shortcut icon', href='/favicon.png')
+    link(rel='stylesheet', href='/css/jquery.rateyo.css')
     link(rel='stylesheet', href='/css/main.css')
+    
 
   body
     include partials/header
@@ -22,4 +24,6 @@ html
     script(src='/js/lib/jquery.min.js')
     script(src='/js/lib/popper.min.js')
     script(src='/js/lib/bootstrap.min.js')
+    script(src='/js/lib/jquery.rateyo.js')
+    script(src='/js/add.js')
     script(src='/js/main.js')
