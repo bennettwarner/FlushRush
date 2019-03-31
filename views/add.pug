@@ -11,11 +11,15 @@ block content
       .col-md-7
         input.form-control(type='text', name='name', id='name')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='name') Location
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='location') Location Details
       .col-md-7
         input.form-control(type='text', name='location', id='location')
         input(type='hidden', name='lat', value='0')
         input(type='hidden', name='lon', value='0')
+    .form-group.row
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='address') Address
+      .col-md-7
+        input.form-control(type='text', name='address', id='address', value='' disabled)
 
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right Gender
