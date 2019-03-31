@@ -53,6 +53,6 @@ $(document).ready(() => {
   }
   getLocation();
  
-  
+  $("#simpleTable").stupidtable();
 
 });
