@@ -13,6 +13,8 @@
           a.nav-link(href='/add') Add
         li.nav-item(class=(title === 'Find') ? 'active' : undefined)
           a.nav-link(href='/find') Find
+        li.nav-item(class=(title === 'Locations') ? 'Locations' : undefined)
+          a.nav-link(href='/locations') Locations
       ul.nav.navbar-nav.ml-auto
         if !user
           li.nav-item(class=(title === 'Login') ? 'active' : undefined)
