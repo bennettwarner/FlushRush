@@ -36,6 +36,7 @@ exports.postAdd = (req, res, next) => {
   } else{
     toiletpaper = true;
   }
+  var quality = Math.round((parseInt(req.body.cleanliness) + parseInt(req.body.traffic) + parseInt(req.body.tp)) / 3);
   const bathroom = new Bathroom({
     id: parseInt((new Date).getTime()),
     name: req.body.name,
@@ -46,6 +47,7 @@ exports.postAdd = (req, res, next) => {
     cleanliness: req.body.cleanliness,
     traffic: req.body.traffic,
     tpQuality: req.body.tp,
+    quality: quality,
     paperTowels: papertowels,
     toiletPaper: toiletpaper,
   });
@@ -97,3 +99,13 @@ console.log(bathroom)
     });
   };
   
+  exports.getLocations = (req, res, next) => {
+    Bathroom.find({}, (err, locations) => {
+      console.log(locations);
+      res.render('locations', {
+        title: 'Locations',
+        locations: locations
+      });
+  
+    });
+  };
