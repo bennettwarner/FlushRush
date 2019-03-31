@@ -8,14 +8,12 @@ const bathroomSchema = new mongoose.Schema({
   gender: String,
   cleanliness: Number,
   traffic: Number,
-  tpQuality: String,
-
-  features: {
-    paperTowels: String,
-    toiletPaper: String,
-  }
+  tpQuality: Number,
+  paperTowels: String,
+  toiletPaper: String,
+  
 }, { timestamps: true });
 
-const User = mongoose.model('Bathroom', bathroomSchema);
+const Bathroom = mongoose.model('Bathroom', bathroomSchema);
 
 module.exports = Bathroom;

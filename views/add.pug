@@ -4,7 +4,7 @@ block content
   .pb-2.mt-2.mb-4.border-bottom
     h3 Add a Flush
 
-  form(action='/account/profile', method='POST')
+  form(action='/add', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='name') Name
@@ -46,7 +46,7 @@ block content
         #trafficStars
         input#traffic(type='hidden', name='traffic', value='0')
     .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='tp') Toilet Paper
+      label.col-md-3.col-form-label.font-weight-bold.text-right(for='tp') Toilet Paper Quality
       .col-md-7
         #tpStars
         input#tp(type='hidden', name='tp', value='0')
@@ -55,13 +55,13 @@ block content
     .form-group.row
       .col-md-3
       .col-md-7
-        input#paperTowels.form-check-input(type='checkbox', name='papertowels', value='')
+        input#paperTowels.form-check-input(type='checkbox', name='papertowels', value='true')
         label.form-check-label(for='paperTowels')
           | Paper Towels
     .form-group.row
       .col-md-3
       .col-md-7
-        input#toiletPaper.form-check-input(type='checkbox', name='toiletpaper', value='')
+        input#toiletPaper.form-check-input(type='checkbox', name='toiletpaper', value='true')
         label.form-check-label(for='toiletPaper')
           | Toilet Paper
     br

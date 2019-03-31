@@ -1,3 +1,6 @@
+const Bathroom = require('../models/Bathroom');
+
+
 /**
  * GET /
  * Home page.
@@ -12,8 +15,50 @@ exports.index = (req, res) => {
  * GET /
  * Add.
  */
-exports.add = (req, res) => {
+exports.getAdd = (req, res) => {
   res.render('add', {
     title: 'Add a Flush'
   });
 };
+
+exports.postAdd = (req, res, next) => {
+  var papertowels;
+  var toiletpaper;
+
+  if (req.body.papertowels == null){
+    papertowels = false;
+  } else{
+    papertowels = true;
+  }
+
+  if (req.body.toiletpaper == null){
+    toiletpaper = false;
+  } else{
+    toiletpaper = true;
+  }
+  const bathroom = new Bathroom({
+    name: req.body.name,
+    location: req.body.location,
+    latitude: req.body.lat,
+    longitude: req.body.lon,
+    gender: req.body.gender,
+    cleanliness: req.body.cleanliness,
+    traffic: req.body.traffic,
+    tpQuality: req.body.tp,
+    paperTowels: papertowels,
+    toiletPaper: toiletpaper,
+  });
+console.log(bathroom)
+  Bathroom.findOne({ name: req.body.name }, (err, existingRecord) => {
+    if (err) { return next(err); }
+    if (existingRecord) {
+      req.flash('errors', { msg: 'This location already exists.' });
+      return res.redirect('/add');
+    }
+    bathroom.save((err) => {
+      if (err) { return next(err); }
+        res.redirect('/add');
+        req.flash('success', { msg: 'Location Added' });
+      });
+    });
+  }

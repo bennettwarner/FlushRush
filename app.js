@@ -118,7 +118,8 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/add', passportConfig.isAuthenticated, homeController.add);
+app.get('/add', passportConfig.isAuthenticated, homeController.getAdd);
+app.post('/add', passportConfig.isAuthenticated, homeController.postAdd);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
