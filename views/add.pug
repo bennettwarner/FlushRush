@@ -52,18 +52,18 @@ block content
         input#tp(type='hidden', name='tp', value='0')
     .form-group.row
       label.col-md-3.col-form-label.font-weight-bold.text-right(for='traffic') Features
-    .form-group.row
-      .col-md-3
-      .col-md-7
-        input#paperTowels.form-check-input(type='checkbox', name='papertowels', value='true')
-        label.form-check-label(for='paperTowels')
-          | Paper Towels
-    .form-group.row
-      .col-md-3
-      .col-md-7
-        input#toiletPaper.form-check-input(type='checkbox', name='toiletpaper', value='true')
-        label.form-check-label(for='toiletPaper')
-          | Toilet Paper
+      .form-group.row
+        .col-md-3
+        .col-md-7
+          input#paperTowels.form-check-input(type='checkbox', name='papertowels', value='true')
+          label#please.form-check-label.form-check-check(for='paperTowels')
+            | Paper Towels
+      .form-group.row
+        .col-md-3
+        .col-md-7
+          input#toiletPaper.form-check-input(type='checkbox', name='toiletpaper', value='true')
+          label.form-check-label.form-check-check(for='toiletPaper')
+            | Toilet Paper
     br
 
     .form-group

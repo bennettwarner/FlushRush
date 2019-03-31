@@ -1254,9 +1254,9 @@ pre {
 
 @media (max-width: 767.98px) {
   .table-responsive-md {
-    display: block;
+    /*display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto;*/
     -webkit-overflow-scrolling: touch; }
     .table-responsive-md > .table-bordered {
       border: 0; } }
