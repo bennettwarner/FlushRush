@@ -10,6 +10,7 @@ const bathroomSchema = new mongoose.Schema({
   cleanliness: Number,
   traffic: Number,
   tpQuality: Number,
+  quality: Number,
   paperTowels: String,
   toiletPaper: String,
 
