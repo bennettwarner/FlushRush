@@ -120,6 +120,7 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
 app.get('/', homeController.index);
 app.get('/add', passportConfig.isAuthenticated, homeController.getAdd);
 app.post('/add', passportConfig.isAuthenticated, homeController.postAdd);
+app.get('/location/:id', passportConfig.isAuthenticated, homeController.getLocation);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

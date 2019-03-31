@@ -37,7 +37,7 @@ exports.postAdd = (req, res, next) => {
     toiletpaper = true;
   }
   const bathroom = new Bathroom({
-    id: (new Date).getTime(),
+    id: parseInt((new Date).getTime()),
     name: req.body.name,
     location: req.body.location,
     latitude: req.body.lat,
@@ -63,3 +63,24 @@ console.log(bathroom)
       });
     });
   }
+
+  exports.getLocation = (req, res, next) => {
+    Bathroom.findOne({ id: req.params.id }, (err, existingRecord) => {
+      console.log(existingRecord);
+    });
+    res.render('location', {
+      title: existingRecord.name,
+      name: existingRecord.name,
+      location: existingRecord.location,
+      latitude: existingRecord.lat,
+      longitude: existingRecord.lon,
+      gender: existingRecord.gender,
+      cleanliness: existingRecord.cleanliness,
+      traffic: existingRecord.traffic,
+      tpQuality: existingRecord.tpQuality,
+      paperTowels: existingRecord.paperTowels,
+      toiletPaper: existingRecord.toiletPaper,
+      added: existingRecord.createdAt,
+    });
+  };
+  
