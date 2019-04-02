@@ -84,8 +84,11 @@ console.log(bathroom)
 
   exports.getLocation = (req, res, next) => {
     Bathroom.findOne({ id: req.params.id }, (err, existingRecord) => {
+<<<<<<< HEAD
       if (existingRecord){
       Comment.find({ id: req.params.id }, (err, comments) => {
+=======
+>>>>>>> parent of c16d34b... Merge branch 'master' of https://github.com/bennettwarner/FlushRush
       console.log(existingRecord);
       var name = existingRecord.name;
       var location = existingRecord.location;
@@ -115,8 +118,13 @@ console.log(bathroom)
         comments: comments,
       });
   
+<<<<<<< HEAD
      } );
   }})};
+=======
+    });
+  };
+>>>>>>> parent of c16d34b... Merge branch 'master' of https://github.com/bennettwarner/FlushRush
   
   exports.getLocations = (req, res, next) => {
     Bathroom.find({}, (err, locations) => {
