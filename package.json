@@ -19,7 +19,6 @@
     "@fortawesome/fontawesome-free": "^5.8.1",
     "@google/maps": "^0.5.5",
     "@ladjs/bootstrap-social": "^7.0.2",
-    "@octokit/rest": "^16.23.2",
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
