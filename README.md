@@ -1,12 +1,14 @@
 # FlushRush
 ## Find a bathroom in a jiff!
 
-![Logo](https://raw.githubusercontent.com/bennettwarner/FlushRush/master/public/logotransparent.png | width=100)
+<img src="https://raw.githubusercontent.com/bennettwarner/FlushRush/master/public/logotransparent.png" data-canonical-src="https://raw.githubusercontent.com/bennettwarner/FlushRush/master/public/logotransparent.png" width="200" />
+
 
 ## Project Purpose
 This program was created as a submission for the 2019 HackWCU MLH Hackathon. Additionally it was created as a concept to address the prevalent issue of people who are in desperate need of a bathroom but can't find one on their own.
 
-<img src="https://raw.githubusercontent.com/bennettwarner/FlushRush/master/screenshot.jpg" data-canonical-src="https://raw.githubusercontent.com/bennettwarner/FlushRush/master/screenshot.jpg" width="200" />
+![Logo](https://raw.githubusercontent.com/bennettwarner/FlushRush/master/screenshot.jpg)
+
 
 ## Project Design
 This software utilizes Node.js javascript web-development with a MongoDB databse and interfaces directly with several subsections of the Google Maps API including:
